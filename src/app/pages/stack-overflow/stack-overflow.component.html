@@ -1,0 +1,203 @@
+<div class="width100 height100 vhCenter black5 font noselect">
+
+    <div class="white100 btb15 blb15 brb15 bbb15 br2 menuShadow lp15 rp15 tp15 bp15" style="width: 1000px;">
+
+        <div class="flexRight">
+
+            <div class="mb15 fs16 fw500 tBlack50 flex1">teamwave</div>
+
+            <div class="tBlack25 mt5">Click on color to change theme</div>
+
+            <div class="w15 mt5 h15 br2 pointer ml15" style="background-color: #1abc9c;" (click)="color='#1abc9c';">
+            </div>
+            <div class="w15 mt5 h15 br2 pointer ml10" style="background-color: #2ecc71;" (click)="color='#2ecc71';">
+            </div>
+            <div class="w15 mt5 h15 br2 pointer ml10" style="background-color: #3498db;" (click)="color='#3498db';">
+            </div>
+            <div class="w15 mt5 h15 br2 pointer ml10" style="background-color: #9b59b6;" (click)="color='#9b59b6';">
+            </div>
+            <div class="w15 mt5 h15 br2 pointer ml10" style="background-color: #f39c12;" (click)="color='#f39c12';">
+            </div>
+            <div class="w15 mt5 h15 br2 pointer ml10" style="background-color: #e67e22;" (click)="color='#e67e22';">
+            </div>
+            <div class="w15 mt5 h15 br2 pointer ml10" style="background-color: #e74c3c;" (click)="color='#e74c3c';">
+            </div>
+
+        </div>
+
+        <div class="h30 vCenter lp15 tWhite100 fw500" [style.backgroundColor]="color"
+            style="border-radius: 2px 2px 0 0;">
+            StackOverflow results
+        </div>
+
+        <div class="h40 blb15 bbb15 brb15 black5" style="border-radius: 0 0 2px 2px;">
+            <input type="text" [(ngModel)]="searchString" class="empInput"
+                placeholder="type search string and press enter (matches both title & body)"
+                (keyup.enter)="searchQuestions()" style="min-height: 39px;">
+        </div>
+
+        <div class="h1 mt15 mb15 black10"></div>
+
+        <div class="fs8 fw500">SET TOGGLE OPTIONS</div>
+
+        <div class="flexRight mt5">
+
+            <div class="black5 br2 flex1" [style.borderBottom]="'1px solid ' + (accepted ? color : '#0000001A')"
+                (click)="accepted = !accepted; searchQuestions();">
+                <div class="lp10 rp10 h30 vhCenter blackHov10">
+                    Only q's with accepted answers
+                </div>
+            </div>
+
+            <div class="black5 br2 ml5 flex1" [style.borderBottom]="'1px solid ' + (closed ? color : '#0000001A')"
+                (click)="closed = !closed; searchQuestions();">
+                <div class="lp10 rp10 h30 vhCenter blackHov10">
+                    Only closed questions
+                </div>
+            </div>
+
+            <div class="black5 br2 ml5 flex1" [style.borderBottom]="'1px solid ' + (migrated ? color : '#0000001A')"
+                (click)="migrated = !migrated; searchQuestions();">
+                <div class="lp10 rp10 h30 vhCenter blackHov10">
+                    Only migrated questions
+                </div>
+            </div>
+
+            <div class="black5 br2 ml5 flex1" [style.borderBottom]="'1px solid ' + (wiki ? color : '#0000001A')"
+                (click)="wiki = !wiki; searchQuestions();">
+                <div class="lp10 rp10 h30 vhCenter blackHov10">
+                    Only wiki-community questions
+                </div>
+            </div>
+
+        </div>
+
+        <div class="flexRight mt15">
+
+            <div class="flex1">
+
+                <div class="fs8 fw500">FILTER START DATE</div>
+
+                <div class="h30 btb15 bbb15 blb15 brb15 mt5 black5" (click)="startDate.open()">
+                    <input readonly matInput [(ngModel)]="startDateValue" [matDatepicker]="startDate" class="empInput"
+                        placeholder="select start date" (dateChange)="searchQuestions()">
+                    <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+                    <mat-datepicker #startDate></mat-datepicker>
+                </div>
+
+            </div>
+
+            <div class="flex1 ml5">
+
+                <div class="fs8 fw500">FILTER END DATE</div>
+
+
+                <div class="h30 btb15 bbb15 blb15 brb15 mt5 black5" (click)="endDate.open()">
+                    <input readonly matInput [(ngModel)]="endDateValue" [matDatepicker]="endDate" class="empInput"
+                        placeholder="select end date" (dateChange)="searchQuestions()">
+                    <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+                    <mat-datepicker #endDate></mat-datepicker>
+                </div>
+
+            </div>
+
+            <div class="flex1 ml5">
+
+                <div class="fs8 fw500">FILTER BY MIN VIEWS</div>
+
+                <div class="h30 btb15 bbb15 blb15 brb15 mt5 black5">
+                    <input [(ngModel)]="views" (keyup)="searchQuestions()" type="text" class="empInput">
+                </div>
+
+            </div>
+
+            <div class="flex1 ml5">
+
+                <div class="fs8 fw500">FILTER BY MIN ANSWERS</div>
+
+                <div class="h30 btb15 bbb15 blb15 brb15 mt5 black5">
+                    <input [(ngModel)]="answers" (keyup)="searchQuestions()" type="text" class="empInput">
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="h1 mt15 mb15 black10"></div>
+
+        <div class="rp5 empScroll2 flexBottom" style="height: 375px;">
+
+            <div *ngFor="let question of question_results; let i=index;" class="flexRight blackHov5 t5s mb5">
+
+                <div class="flexBottom w100">
+                    <div class="flex1 vhCenter fs8 fw500 bbb10" [style.backgroundColor]="color + '33'">{{ question.score
+                        }} VOTES</div>
+                    <div class="flex1 vhCenter fs8 fw500 bbb10" [style.backgroundColor]="color + '33'">{{
+                        question.answer_count }} ANSWERS</div>
+                    <div class="flex1 vhCenter fs8 fw500" [style.backgroundColor]="color + '33'">{{ question.view_count
+                        }} VIEWS</div>
+                </div>
+
+                <div class="flex1 ml5 tp7 bp7 lp10 rp10 black5 br2">
+
+                    <div>{{ question.title }}</div>
+
+                    <div class="flexRight mt7">
+
+                        <div *ngFor="let tag of question.tags;" class="mr5 fs8 h25 vhCenter lp10 rp10 br2"
+                            [style.backgroundColor]="color + '33'">{{ tag }}</div>
+
+                    </div>
+
+                    <div class="fs9 tp7 btb10 mt7 flexRight">
+
+                        <div class="flex1">
+                            Asked by
+                            <a [href]="question.owner.link" target="_blank" class="fs8">{{ question.owner.display_name }}</a>
+                        </div>
+
+                        <a [href]="question.link" target="_blank" class="fs8">VIEW ON STACKOVERFLOW</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="flex1 vhCenter black5 btb10 blb10 brb10 bbb10">
+                No results to show!
+            </div>
+
+        </div>
+
+        <div class="h1 mt15 mb15 black10"></div>
+
+        <div class="flexRight">
+
+            <div class="flex1"></div>
+
+            <div *ngFor="let pageItem of pages;" class="ml15 pointer" style="border-radius: 100%;"
+                (click)="page=pageItem; searchQuestions();"
+                [style.backgroundColor]="page == pageItem ? color : '#0000000D'"
+                [style.color]="page == pageItem ? '#fff' : '#000'">
+                <div style="border-radius: 100%;" class="h30 w30 fw500 br2 blackHov10 vhCenter">{{ pageItem }}</div>
+            </div>
+
+            <div class="flex1"></div>
+
+            <div class="blb10 btb10 brb10 bbb10 br2 black5">
+                <input [(ngModel)]="pagesize" (keyup)="searchQuestions();" type="text" class="empInput tCenter"
+                    style="width: 50px; padding: 0;">
+            </div>
+
+            <div class="w1 black10 ml15"></div>
+
+            <div class="vhCenter lp15 tBlack50">
+                results
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

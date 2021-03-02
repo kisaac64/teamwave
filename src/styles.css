@@ -1,0 +1,278 @@
+/* SELF MADE CSS LIBRARY */
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap');
+@import url('styles/heights_and_widths.css');
+@import url('styles/font_sizes.css');
+@import url('styles/padding.css');
+@import url('styles/margins.css');
+@import url('styles/colors.css');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+.font {
+	font-family: 'Rubik', sans-serif;
+	color: #000000;
+	font-size: 10pt;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.br2 {
+	border-radius: 2px;
+}
+
+.rmLh {
+    line-height: .75em;
+}
+
+.noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+		-webkit-user-select: none; /* Safari */
+		-khtml-user-select: none; /* Konqueror HTML */
+			-moz-user-select: none; /* Firefox */
+			-ms-user-select: none; /* Internet Explorer/Edge */
+				user-select: none; /* Non-prefixed version, currently
+									supported by Chrome and Opera */
+}
+
+.flexRight{
+	display: flex;
+	flex-direction: row;
+}
+
+.flexBottom{
+	display: flex;
+	flex-direction: column;
+}
+
+.floatLeft {
+	float: left;
+}
+
+.oHide{
+	overflow: hidden;
+}
+
+.flex1{ flex: 1; }
+.flex2{ flex: 2; }
+.flex3{ flex: 3; }
+.flex4{ flex: 4; }
+.flex5{ flex: 5; }
+.flex6{ flex: 6; }
+.flex7{ flex: 7; }
+.flex8{ flex: 8; }
+.flex9{ flex: 9; }
+.flex10{ flex: 10; }
+
+.fw100 { font-weight: 100; }
+.fw200 { font-weight: 200; }
+.fw300 { font-weight: 300; }
+.fw400 { font-weight: 400; }
+.fw500 { font-weight: 500; }
+.fw600 { font-weight: 600; }
+.fw700 { font-weight: 700; }
+.fw800 { font-weight: 800; }
+.fw900 { font-weight: 900; }
+
+.vCenter {
+	display: flex;
+	align-items: center;
+	justify-items: center;
+}
+
+.hCenter {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+
+.vhCenter {
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+	justify-items: center;
+}
+
+.empInput {
+	outline: none;
+	background-color: transparent;
+	min-width: 0px;
+	min-height: 28px;
+	max-height: 28px;
+	height: 28px;
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+	border: none;
+	font-family: 'Rubik', sans-serif;
+	color: #000000;
+	font-size: 10pt;
+	padding-left: 10px;
+}
+
+.empScroll2 { overflow-y: scroll; }
+.empScroll2::-webkit-scrollbar { width: 5px; }
+.empScroll2::-webkit-scrollbar-track { background-color: #0000000D; border-radius: 2px; }
+.empScroll2::-webkit-scrollbar-thumb { background-color: #00000080; border-radius: 2px; }
+
+.tCenter {
+	text-align: center;
+}
+
+.t5s {
+	transition-duration: .5s;
+}
+
+.t1s {
+	transition-duration: 1s;
+}
+
+.z100 { z-index: 100; }
+.z200 { z-index: 200; }
+.z300 { z-index: 300; }
+.z400 { z-index: 400; }
+.z500 { z-index: 500; }
+.z600 { z-index: 600; }
+.z700 { z-index: 700; }
+.z800 { z-index: 800; }
+.z900 { z-index: 900; }
+.z1000 { z-index: 1000; }
+
+.op0 {opacity: 0.0; }
+.op1 {opacity: 0.01; }
+.op2 {opacity: 0.02; }
+.op3 {opacity: 0.03; }
+.op4 {opacity: 0.04; }
+.op5 {opacity: 0.05; }
+.op6 {opacity: 0.06; }
+.op7 {opacity: 0.07; }
+.op8 {opacity: 0.08; }
+.op9 {opacity: 0.09; }
+.op10 {opacity: 0.1; }
+.op11 {opacity: 0.11; }
+.op12 {opacity: 0.12; }
+.op13 {opacity: 0.13; }
+.op14 {opacity: 0.14; }
+.op15 {opacity: 0.15; }
+.op16 {opacity: 0.16; }
+.op17 {opacity: 0.17; }
+.op18 {opacity: 0.18; }
+.op19 {opacity: 0.19; }
+.op20 {opacity: 0.2; }
+.op21 {opacity: 0.21; }
+.op22 {opacity: 0.22; }
+.op23 {opacity: 0.23; }
+.op24 {opacity: 0.24; }
+.op25 {opacity: 0.25; }
+.op26 {opacity: 0.26; }
+.op27 {opacity: 0.27; }
+.op28 {opacity: 0.28; }
+.op29 {opacity: 0.29; }
+.op30 {opacity: 0.3; }
+.op31 {opacity: 0.31; }
+.op32 {opacity: 0.32; }
+.op33 {opacity: 0.33; }
+.op34 {opacity: 0.34; }
+.op35 {opacity: 0.35; }
+.op36 {opacity: 0.36; }
+.op37 {opacity: 0.37; }
+.op38 {opacity: 0.38; }
+.op39 {opacity: 0.39; }
+.op40 {opacity: 0.4; }
+.op41 {opacity: 0.41; }
+.op42 {opacity: 0.42; }
+.op43 {opacity: 0.43; }
+.op44 {opacity: 0.44; }
+.op45 {opacity: 0.45; }
+.op46 {opacity: 0.46; }
+.op47 {opacity: 0.47; }
+.op48 {opacity: 0.48; }
+.op49 {opacity: 0.49; }
+.op50 {opacity: 0.5; }
+.op51 {opacity: 0.51; }
+.op52 {opacity: 0.52; }
+.op53 {opacity: 0.53; }
+.op54 {opacity: 0.54; }
+.op55 {opacity: 0.55; }
+.op56 {opacity: 0.56; }
+.op57 {opacity: 0.57; }
+.op58 {opacity: 0.58; }
+.op59 {opacity: 0.59; }
+.op60 {opacity: 0.6; }
+.op61 {opacity: 0.61; }
+.op62 {opacity: 0.62; }
+.op63 {opacity: 0.63; }
+.op64 {opacity: 0.64; }
+.op65 {opacity: 0.65; }
+.op66 {opacity: 0.66; }
+.op67 {opacity: 0.67; }
+.op68 {opacity: 0.68; }
+.op69 {opacity: 0.69; }
+.op70 {opacity: 0.7; }
+.op71 {opacity: 0.71; }
+.op72 {opacity: 0.72; }
+.op73 {opacity: 0.73; }
+.op74 {opacity: 0.74; }
+.op75 {opacity: 0.75; }
+.op76 {opacity: 0.76; }
+.op77 {opacity: 0.77; }
+.op78 {opacity: 0.78; }
+.op79 {opacity: 0.79; }
+.op80 {opacity: 0.8; }
+.op81 {opacity: 0.81; }
+.op82 {opacity: 0.82; }
+.op83 {opacity: 0.83; }
+.op84 {opacity: 0.84; }
+.op85 {opacity: 0.85; }
+.op86 {opacity: 0.86; }
+.op87 {opacity: 0.87; }
+.op88 {opacity: 0.88; }
+.op89 {opacity: 0.89; }
+.op90 {opacity: 0.9; }
+.op91 {opacity: 0.91; }
+.op92 {opacity: 0.92; }
+.op93 {opacity: 0.93; }
+.op94 {opacity: 0.94; }
+.op95 {opacity: 0.95; }
+.op96 {opacity: 0.96; }
+.op97 {opacity: 0.97; }
+.op98 {opacity: 0.98; }
+.op99 {opacity: 0.99; }
+.op100 {opacity: 1.0; }
+
+.absolute { position: absolute; }
+.backShadow { box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5); }
+.menuShadow { box-shadow: 0px 2.5px 5px 0px rgba(0,0,0,0.3); }
+
+.width100 { width: 100vw; }
+.height100 { height: 100vh; }
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
